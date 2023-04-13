@@ -60,7 +60,7 @@ console.log(`This is our updated basket ${basket}`);
 
 // 1. Add a global `const` named `maxItems` and set it to 5.
 
-const maxItems = 5;
+let maxItems = 5;
 
 // 2. Create a function called isFull(). It should:
 //   - return `false` if the basket contains *less* than max number of items
@@ -88,7 +88,7 @@ console.log(basket.length);
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 
-function addItem(food) {
+function addItemTwo(food) {
     if(!isFull()){
     basket.push(food);
     return true;
@@ -96,8 +96,8 @@ function addItem(food) {
     
     return false;
 }
-
-
+console.log(addItemTwo('bagel'));
+console.log(basket);
 
 // __Using Array built-in functions!__
 
@@ -106,3 +106,4 @@ function addItem(food) {
 //   - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
 //   - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
 //   - Return the item removed or `null` if the item was not found
+
