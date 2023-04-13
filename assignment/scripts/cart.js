@@ -32,7 +32,7 @@ listItems()
 function empty(){
     basket = [];
 }
-//empty()
+empty()
 console.log(`Basket is now ${basket}`);
 
 //Stretch Goal
