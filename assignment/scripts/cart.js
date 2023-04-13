@@ -54,4 +54,4 @@ console.log(isFull())
 let removeItem = item => basket.splice(basket.indexOf(item),1)
 
 removeItem('beer') // removing beer
-console.log(basket) // testing contents of basket for removed item
+console.log(`Basket is now ${basket}`) // testing contents of basket for removed item
