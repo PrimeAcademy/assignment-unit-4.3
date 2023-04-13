@@ -11,18 +11,18 @@ let basket = [];
      return true;}
     } */
 
-add('book');
-add('bookmark');
-add('bookcase');
-console.log(`Basket is ${basket}`);
-
- function add(item) {
+ function addItem(item) {
     basket.push(item); 
     return basket.length > 0;
-
 } 
-console.log(add('book')) 
-console.log('Adding apples (expect true)', add('apples'));
+
+addItem('book');
+addItem('bookmark');
+addItem('bookcase');
+console.log(`Basket is ${basket}`);
+
+console.log(addItem('book')) 
+console.log('Adding apples (expect true)', addItem('apples'));
 
 function listItems(){
 for (let items of basket){
@@ -41,12 +41,22 @@ console.log(`The basket should now be emptied ${basket}`);
 //Stretch Goals
 
 const maxItems = 5;
-function isFull(basket){
-    if (basket < maxItems){
+function isFull(limit){
+    if (basket.length + limit.length < maxItems){
+       console.log(basket, addItem(limit));
         return false;
     }   return true;
 }
-console.log(isFull(6));
-console.log(isFull(5));
-console.log(isFull(1));
+console.log(isFull(['eggs', 'milk', 'cheese']));
+console.log(basket)
+console.log(isFull(['eggs', 'milk', 'cheese', 'bacon', 'ham']));
+console.log(basket)
 
+// if (isFull(x) === false){
+//     addItem(item); 
+//   return 'The cart is full' ;
+
+// }
+
+
+// console.log(isFull(2), addItem('Backpack'))
