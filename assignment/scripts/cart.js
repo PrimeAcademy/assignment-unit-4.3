@@ -46,7 +46,7 @@ function isFull(){
         return false;
 }
 
-console.log(basket)
+console.log(`Basket is now ${basket}`)
 console.log(isFull())
 
 
