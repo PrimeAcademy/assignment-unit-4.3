@@ -103,7 +103,17 @@ console.log(basket);
 
 // 4. Create a function called `removeItem`. It should:
 //   - Take an input parameter for a string `item`
-//   - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
-//   - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
+//   - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) 
+//to find the index of the first matching item in the basket.
+//   - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) 
+//to remove the first matching item from the basket.
 //   - Return the item removed or `null` if the item was not found
+
+function removeItem(pizza) {
+    console.log(basket.indexOf(pizza));}
+   basket.splice(pizzaIndex, 1, 'bagel bites');
+
+basket.splice(0, 0);
+removeItem('bagel');
+console.log(basket);
 
