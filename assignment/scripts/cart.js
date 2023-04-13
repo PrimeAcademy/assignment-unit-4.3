@@ -12,6 +12,10 @@ function addItem(item) {
   basket.push(item);
   return basket.includes(item);
 }
+// adding items
+addItem('milk');
+addItem('toilet paper');
+console.log(basket); // should have milk & toilet paper
 
 function listItems() {
   for (let item of basket) {
@@ -22,6 +26,8 @@ function listItems() {
 function empty() {
   basket = [];
 }
+empty();
+console.log('basket should be empty', basket);
 
 console.log(`Basket is ${basket}`);
 console.log('Adding apples (expect true)', addItem('apples'));
@@ -43,4 +49,9 @@ function removeItem(item) {
   return removedItem;
 }
 
-console.log(removeItem('apples'));
+console.log(basket);
+console.log('should remove "apples" from basket');
+console.log(removeItem('apples')); // should return apples
+console.log(basket);
+// basket is now empty should return null
+console.log(removeItem('bananas'));
