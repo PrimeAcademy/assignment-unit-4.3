@@ -1,9 +1,30 @@
 console.log("***** Cart Functions *****");
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
+const basketDOM = document.querySelector(".basket");
+const addBtn = document.querySelector("#add-btn");
+const input = document.querySelector(".input");
+let maxItemsDOM = document.querySelector("#max-items");
+
+addBtn.addEventListener("click", () => {
+  let inputValue = input.value;
+  addItem(inputValue);
+  show(basket);
+});
 
 let basket = [];
 const maxItems = 5;
+maxItemsDOM.innerHTML = "The max items you can list are " + maxItems;
+
+function show(basketItems) {
+  basketHTML = basketItems
+    .map((item) => {
+      return `<li>${item}</li>`;
+    })
+    .join("");
+
+  basketDOM.innerHTML = basketHTML;
+}
 
 function addItem(item) {
   if (basket.length < maxItems) {
@@ -30,6 +51,7 @@ listItems(basket);
 // empty
 function empty() {
   basket = [];
+  show(basket);
 }
 empty();
 console.log("empty basket:", basket);
@@ -69,3 +91,7 @@ function removeItem(item) {
 
 console.log("remove: ", removeItem("pants"), "new basket: ", basket);
 console.log("remove: ", removeItem("blouse"), "new basket: ", basket);
+
+//
+
+show(basket);
