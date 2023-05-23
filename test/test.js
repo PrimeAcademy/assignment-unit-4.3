@@ -55,11 +55,20 @@ describe('Automated tests', function () {
         });
     });
     describe('`addItem` function takes in an item, adds to the array', function () {
-        it('`addItem` function takes in an item, adds to the array', function () {
+        it('`addItem` function takes in an item', function () {
+            expect(addItem.length).to.equal(1);
+        });
+        it('`addItem` adds to the array', function () {
             let { basket, addItem } = testItems;
             addItem('Kale');
             expect(basket.length).to.be.greaterThan(0);
             assert.equal(basket[basket.length - 1], 'Kale');
+        });
+        it('`addItem` function is not hardcoded', function () {
+            let { basket, addItem } = testItems;
+            addItem('Soup');
+            expect(basket.length).to.be.greaterThan(0);
+            assert.equal(basket[basket.length - 1], 'Soup');
         });
     });
     describe('`addItem` function returns true', function () {
