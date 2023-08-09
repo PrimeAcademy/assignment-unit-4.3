@@ -38,15 +38,15 @@ describe('Automated tests', function () {
     before(function () {
         // runs once before the first test in this block
         let { basket } = testItems;
-        if(typeof basket === 'array') {
+        if (typeof basket === 'array') {
             originalBasket = [...basket];
-        }    
+        }
     });
     after(function () {
         // runs once after the last test in this block
-        if(typeof basket === 'array') {
+        if (typeof basket === 'array') {
             basket = [...originalBasket];
-        } 
+        }
     });
     describe('Created global variable for `basket` as empty array', function () {
         it('Created global variable for `basket` as empty array', function () {
@@ -84,7 +84,7 @@ describe('Automated tests', function () {
                 basket.length = 0;
                 basket.push('Kale', 'Spinach');
                 let tempLog = console.log;
-                
+
                 // Temporarily override console.log
                 console.log = (item) => result += item;
                 listItems(basket);
@@ -95,6 +95,7 @@ describe('Automated tests', function () {
             expect(result).to.be.a('string');
             assert.equal(result.includes('Kale'), true);
             assert.equal(result.includes('Spinach'), true);
+            basket.length = 0;
         });
     });
     describe(`Functions are tested using console.log()`, function () {
